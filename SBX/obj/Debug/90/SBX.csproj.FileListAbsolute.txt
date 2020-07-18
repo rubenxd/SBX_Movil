@@ -512,3 +512,11 @@ C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\stamp\_ConvertResource
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res\menu\popup_menu.xml
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res\drawable\button_menu.xml
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res\drawable\androidpressed.png
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\android\src\crc641b5e4fd77f0e69ca\Producto.java
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\android\src\crc641b5e4fd77f0e69ca\ProductoActivity.java
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res\layout\activity_producto.xml
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res\layout\activity_inventario.xml
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\android\src\crc641b5e4fd77f0e69ca\InventarioActivity.java

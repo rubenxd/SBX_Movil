@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/item1"
+        android:title="Venta" />
+  <item android:id="@+id/item1"
+        android:title="Producto" />
+  <item android:id="@+id/item1"
+        android:title="Inventario" />
+  <item android:id="@+id/item1"
+        android:title="Proveedor" />
+  <item android:id="@+id/item1"
+       android:title="Cliente" />
+</menu>

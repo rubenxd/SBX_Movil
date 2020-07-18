@@ -1,6 +1,12 @@
+SBX.InventarioActivity, SBX;crc641b5e4fd77f0e69ca.InventarioActivity
+SBX.InventarioActivity;crc641b5e4fd77f0e69ca.InventarioActivity
+sbx.InventarioActivity;crc641b5e4fd77f0e69ca.InventarioActivity
 SBX.MainActivity, SBX;crc641b5e4fd77f0e69ca.MainActivity
 SBX.MainActivity;crc641b5e4fd77f0e69ca.MainActivity
 sbx.MainActivity;crc641b5e4fd77f0e69ca.MainActivity
+SBX.ProductoActivity, SBX;crc641b5e4fd77f0e69ca.ProductoActivity
+SBX.ProductoActivity;crc641b5e4fd77f0e69ca.ProductoActivity
+sbx.ProductoActivity;crc641b5e4fd77f0e69ca.ProductoActivity
 SBX.SplashActivity, SBX;crc641b5e4fd77f0e69ca.SplashActivity
 SBX.SplashActivity;crc641b5e4fd77f0e69ca.SplashActivity
 sbx.SplashActivity;crc641b5e4fd77f0e69ca.SplashActivity

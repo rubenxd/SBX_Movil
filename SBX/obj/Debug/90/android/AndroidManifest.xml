@@ -5,7 +5,9 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:name="android.app.Application" android:debuggable="true">
+    <activity android:label="InventarioActivity" android:name="crc641b5e4fd77f0e69ca.InventarioActivity" />
     <activity android:label="@string/app_name" android:theme="@style/AppTheme" android:name="crc641b5e4fd77f0e69ca.MainActivity" />
+    <activity android:label="Producto" android:name="crc641b5e4fd77f0e69ca.ProductoActivity" />
     <activity android:noHistory="true" android:theme="@style/MyTheme.Splash" android:name="crc641b5e4fd77f0e69ca.SplashActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
