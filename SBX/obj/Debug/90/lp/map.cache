@@ -1,3 +1,5 @@
+System.Data.Portable
+System.Transactions.Portable
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
 Xamarin.Android.Arch.Lifecycle.Common

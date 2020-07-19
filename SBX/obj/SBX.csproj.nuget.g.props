@@ -12,4 +12,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMono_Data_Sqlite_Portable Condition=" '$(PkgMono_Data_Sqlite_Portable)' == '' ">C:\Users\RUBEN\.nuget\packages\mono.data.sqlite.portable\1.0.3.5</PkgMono_Data_Sqlite_Portable>
+  </PropertyGroup>
 </Project>

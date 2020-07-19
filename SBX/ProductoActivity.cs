@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SBX.Ado;
 
 namespace SBX
 {
@@ -21,6 +22,14 @@ namespace SBX
 
             // Create your application here
             SetContentView(Resource.Layout.activity_producto);
+
+            AdoInventario adoInventario = new AdoInventario();
+            AutoCompleteTextView textView = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteProducto);
+            var Productos = adoInventario.AdoSelect();
+         
+            var adapter = new ArrayAdapter<String>(this, Resource.Layout.list_item, Productos);
+
+            textView.Adapter = adapter;
         }
     }
 }

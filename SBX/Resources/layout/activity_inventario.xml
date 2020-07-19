@@ -102,5 +102,5 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_salir" />
     </LinearLayout>
-   
+
 </LinearLayout>

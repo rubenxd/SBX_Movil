@@ -2,6 +2,68 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v9.0": {
+      "Microsoft.Data.Sqlite.Core/3.1.6": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Data.Sqlite.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Data.Sqlite.dll": {}
+        }
+      },
+      "Mono.Data.Sqlite.Portable/1.0.3.5": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Mono.Data.Sqlite",
+          "System.Data",
+          "System.Transactions"
+        ],
+        "compile": {
+          "lib/MonoAndroid/System.Data.Portable.dll": {},
+          "lib/MonoAndroid/System.Transactions.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/System.Data.Portable.dll": {},
+          "lib/MonoAndroid/System.Transactions.Portable.dll": {}
+        }
+      },
+      "SQLitePCLRaw.core/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Buffers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {}
+        }
+      },
+      "System.Memory/4.5.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Memory.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -9,6 +71,15 @@
         },
         "runtime": {
           "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
       "Xamarin.Android.Arch.Core.Common/1.1.1.3": {
@@ -733,6 +804,138 @@
     }
   },
   "libraries": {
+    "Microsoft.Data.Sqlite.Core/3.1.6": {
+      "sha512": "fau0sMXOqZSBm3cZzfZMmk8YD9aa3ePtZQ2B34OfZKoh1RU+5sRstMEig9NZes4hcUiZkfcXFCy2JUnD+8T2XQ==",
+      "type": "package",
+      "path": "microsoft.data.sqlite.core/3.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.0/Microsoft.Data.Sqlite.dll",
+        "lib/netstandard2.0/Microsoft.Data.Sqlite.xml",
+        "microsoft.data.sqlite.core.3.1.6.nupkg.sha512",
+        "microsoft.data.sqlite.core.nuspec"
+      ]
+    },
+    "Mono.Data.Sqlite.Portable/1.0.3.5": {
+      "sha512": "K9firU6nVyjwwpqr6aRJLNawao5bdRxr0AOfn/9bcwf2op02YOgCqNQ36fb9n7+O6F5spUAKky18/fBMqvXujA==",
+      "type": "package",
+      "path": "mono.data.sqlite.portable/1.0.3.5",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/netcore/Mono.Data.Sqlite.Portable.props",
+        "build/wp8/Mono.Data.Sqlite.Portable.props",
+        "lib/MonoAndroid/System.Data.Portable.dll",
+        "lib/MonoAndroid/System.Transactions.Portable.dll",
+        "lib/MonoTouch/System.Data.Portable.dll",
+        "lib/MonoTouch/System.Transactions.Portable.dll",
+        "lib/XamariniOS/System.Data.Portable.dll",
+        "lib/XamariniOS/System.Transactions.Portable.dll",
+        "lib/net4/Mono.Data.Sqlite.dll",
+        "lib/net4/System.Data.Portable.dll",
+        "lib/net4/System.Transactions.Portable.dll",
+        "lib/netcore/System.Data.Portable.dll",
+        "lib/netcore/System.Transactions.Portable.dll",
+        "lib/portable-net4+sl5+wp8+win+MonoAndroid+MonoTouch+XamariniOS/Mono.Data.Sqlite.dll",
+        "lib/portable-net4+sl5+wp8+win+MonoAndroid+MonoTouch+XamariniOS/System.Data.Portable.dll",
+        "lib/portable-net4+sl5+wp8+win+MonoAndroid+MonoTouch+XamariniOS/System.Transactions.Portable.dll",
+        "lib/sl5/Community.CsharpSqlite.Silverlight.dll",
+        "lib/sl5/Mono.Data.Sqlite.dll",
+        "lib/sl5/MonoDataSqliteWrapper.dll",
+        "lib/sl5/System.Data.Portable.dll",
+        "lib/sl5/System.Transactions.Portable.dll",
+        "lib/wp8/System.Data.Portable.dll",
+        "lib/wp8/System.Transactions.Portable.dll",
+        "mono.data.sqlite.portable.1.0.3.5.nupkg.sha512",
+        "mono.data.sqlite.portable.nuspec",
+        "tools/Mono.Data.Sqlite.Portable.targets",
+        "tools/install.ps1",
+        "tools/lib/netcore-arm/Mono.Data.Sqlite.dll",
+        "tools/lib/netcore-arm/MonoDataSqliteWrapper.dll",
+        "tools/lib/netcore-arm/MonoDataSqliteWrapper.lib",
+        "tools/lib/netcore-arm/MonoDataSqliteWrapper.winmd",
+        "tools/lib/netcore-x86/Mono.Data.Sqlite.dll",
+        "tools/lib/netcore-x86/MonoDataSqliteWrapper.dll",
+        "tools/lib/netcore-x86/MonoDataSqliteWrapper.lib",
+        "tools/lib/netcore-x86/MonoDataSqliteWrapper.winmd",
+        "tools/lib/wp8-arm/Mono.Data.Sqlite.dll",
+        "tools/lib/wp8-arm/MonoDataSqliteWrapper.dll",
+        "tools/lib/wp8-arm/MonoDataSqliteWrapper.lib",
+        "tools/lib/wp8-arm/MonoDataSqliteWrapper.winmd",
+        "tools/lib/wp8-x86/Mono.Data.Sqlite.dll",
+        "tools/lib/wp8-x86/MonoDataSqliteWrapper.dll",
+        "tools/lib/wp8-x86/MonoDataSqliteWrapper.lib",
+        "tools/lib/wp8-x86/MonoDataSqliteWrapper.winmd",
+        "tools/netcore45/install.ps1",
+        "tools/netcore45/uninstall.ps1",
+        "tools/netcore451/install.ps1",
+        "tools/netcore451/uninstall.ps1",
+        "tools/uninstall.ps1",
+        "tools/wp8/install.ps1",
+        "tools/wp8/uninstall.ps1"
+      ]
+    },
+    "SQLitePCLRaw.core/2.0.2": {
+      "sha512": "TFSBX426OelS1tkaVC254NVVlrJIe9YLhWPkEvuqJj2104QpmDmEYOhfdfDJD1E/2SmqDhoRw1ek5cQHj8olcQ==",
+      "type": "package",
+      "path": "sqlitepclraw.core/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SQLitePCLRaw.core.dll",
+        "sqlitepclraw.core.2.0.2.nupkg.sha512",
+        "sqlitepclraw.core.nuspec"
+      ]
+    },
+    "System.Buffers/4.4.0": {
+      "sha512": "AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
+      "type": "package",
+      "path": "system.buffers/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.1/System.Buffers.dll",
+        "lib/netstandard1.1/System.Buffers.xml",
+        "lib/netstandard2.0/System.Buffers.dll",
+        "lib/netstandard2.0/System.Buffers.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/System.Buffers.dll",
+        "ref/netstandard1.1/System.Buffers.xml",
+        "ref/netstandard2.0/System.Buffers.dll",
+        "ref/netstandard2.0/System.Buffers.xml",
+        "system.buffers.4.4.0.nupkg.sha512",
+        "system.buffers.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Memory/4.5.3": {
+      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "type": "package",
+      "path": "system.memory/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Numerics.Vectors/4.5.0": {
       "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
       "type": "package",
@@ -776,6 +979,31 @@
         "ref/xamarinwatchos10/_._",
         "system.numerics.vectors.4.5.0.nupkg.sha512",
         "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -1544,6 +1772,8 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
+      "Microsoft.Data.Sqlite.Core >= 3.1.6",
+      "Mono.Data.Sqlite.Portable >= 1.0.3.5",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.3",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.3",
       "Xamarin.Android.Support.Design >= 28.0.0.3",
@@ -1588,6 +1818,14 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "Microsoft.Data.Sqlite.Core": {
+            "target": "Package",
+            "version": "[3.1.6, )"
+          },
+          "Mono.Data.Sqlite.Portable": {
+            "target": "Package",
+            "version": "[1.0.3.5, )"
+          },
           "Xamarin.Android.Support.Core.Utils": {
             "target": "Package",
             "version": "[28.0.0.3, )"

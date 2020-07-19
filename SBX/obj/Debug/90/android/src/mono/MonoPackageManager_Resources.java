@@ -3,6 +3,10 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "SBX.dll" comes first in this list. */
 		"SBX.dll",
+		"Microsoft.Data.Sqlite.dll",
+		"SQLitePCLRaw.core.dll",
+		"System.Data.Portable.dll",
+		"System.Transactions.Portable.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

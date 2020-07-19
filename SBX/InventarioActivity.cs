@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SBX.Ado;
 
 namespace SBX
 {
@@ -36,6 +37,29 @@ namespace SBX
             {
                 var intent = new Intent(this, typeof(MainActivity));
                 StartActivity(intent);
+            };
+            //EditText outputText = FindViewById<EditText>(Resource.Id.outputText);
+            //ADO
+            Button btnGuardar = FindViewById<Button>(Resource.Id.btn_guardar);
+            AdoInventario adoInventario = new AdoInventario();
+            EditText editText_Item = FindViewById<EditText>(Resource.Id.editText_Item);
+            EditText editText_Nombre = FindViewById<EditText>(Resource.Id.editText_Nombre);
+            EditText editText_Referencia = FindViewById<EditText>(Resource.Id.editText_Referencia);
+            EditText editText_iva = FindViewById<EditText>(Resource.Id.editText_iva);
+            Spinner planet_prompt = FindViewById<Spinner>(Resource.Id.spinner);
+            EditText editText_costo = FindViewById<EditText>(Resource.Id.editText_costo);
+            EditText editText_PrecioVenta = FindViewById<EditText>(Resource.Id.editText_PrecioVenta);
+            btnGuardar.Click += (sender, e) =>
+            {            
+                adoInventario.Item = editText_Item.Text;
+                adoInventario.Nombre = editText_Nombre.Text;
+                adoInventario.Referencia = editText_Referencia.Text;
+                adoInventario.IVA = editText_iva.Text;
+                adoInventario.proveedor = planet_prompt.SelectedItem.ToString();
+                adoInventario.costo = editText_costo.Text;
+                adoInventario.precioventa = editText_PrecioVenta.Text;
+                var toast = adoInventario.AdoCreate();
+                Toast.MakeText(this, toast, ToastLength.Long).Show();       
             };
         }
 
