@@ -2,7 +2,7 @@ package crc641b5e4fd77f0e69ca;
 
 
 public class ProductoActivity
-	extends android.app.Activity
+	extends android.app.ListActivity
 	implements
 		mono.android.IGCUserPeer
 {

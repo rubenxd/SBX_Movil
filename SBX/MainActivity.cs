@@ -24,6 +24,8 @@ namespace SBX
             Button btnProducto = FindViewById<Button>(Resource.Id.btn_producto);
             btnProducto.Click += (sender, e) =>
             {
+                AdoDataBaseSBX adoDataBaseSBX = new AdoDataBaseSBX();
+                string toast = adoDataBaseSBX.CreateDataBase();
                 var intent = new Intent(this, typeof(ProductoActivity));              
                 StartActivity(intent);
             };
@@ -31,12 +33,12 @@ namespace SBX
             Button btnInventario = FindViewById<Button>(Resource.Id.btn_inventario);
             btnInventario.Click += (sender, e) =>
             {
+                ////crear base de datos
+                AdoDataBaseSBX adoDataBaseSBX = new AdoDataBaseSBX();
+                string toast = adoDataBaseSBX.CreateDataBase();
                 var intent = new Intent(this, typeof(InventarioActivity));
                 StartActivity(intent);
-            };
-            //crear base de datos
-            AdoDataBaseSBX adoDataBaseSBX = new AdoDataBaseSBX();
-            string toast = adoDataBaseSBX.CreateDataBase();
+            };         
         }   
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
