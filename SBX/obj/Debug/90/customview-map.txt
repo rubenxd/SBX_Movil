@@ -7,17 +7,17 @@ bitmap;obj\Debug\90\res\drawable\splash_screen.xml
 Button;obj\Debug\90\res\layout\activity_inventario.xml
 Button;obj\Debug\90\res\layout\activity_main.xml
 Button;obj\Debug\90\res\layout\activity_producto.xml
+Button;obj\Debug\90\res\layout\activity_proveedor.xml
 cache-path;C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\lp\37\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\90\res\drawable\splash_screen.xml
 color;obj\Debug\90\res\values\colors.xml
 color;obj\Debug\90\res\values\ic_launcher_background.xml
 EditText;obj\Debug\90\res\layout\activity_inventario.xml
-EditText;obj\Debug\90\res\layout\activity_producto.xml
+EditText;obj\Debug\90\res\layout\activity_proveedor.xml
 external-cache-path;C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\lp\37\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\lp\37\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
-GridView;obj\Debug\90\res\layout\activity_producto.xml
 item;obj\Debug\90\res\drawable\button_menu.xml
 item;obj\Debug\90\res\drawable\productos_list.xml
 item;obj\Debug\90\res\drawable\splash_screen.xml
@@ -28,6 +28,7 @@ layer-list;obj\Debug\90\res\drawable\splash_screen.xml
 LinearLayout;obj\Debug\90\res\layout\activity_inventario.xml
 LinearLayout;obj\Debug\90\res\layout\activity_main.xml
 LinearLayout;obj\Debug\90\res\layout\activity_producto.xml
+LinearLayout;obj\Debug\90\res\layout\activity_proveedor.xml
 ListView;obj\Debug\90\res\layout\activity_producto.xml
 menu;obj\Debug\90\res\menu\popup_menu.xml
 paths;C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\lp\37\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -44,4 +45,5 @@ string-array;obj\Debug\90\res\values\strings.xml
 style;obj\Debug\90\res\values\styles.xml
 TextView;obj\Debug\90\res\layout\activity_inventario.xml
 TextView;obj\Debug\90\res\layout\activity_producto.xml
+TextView;obj\Debug\90\res\layout\activity_proveedor.xml
 TextView;obj\Debug\90\res\layout\list_item.xml

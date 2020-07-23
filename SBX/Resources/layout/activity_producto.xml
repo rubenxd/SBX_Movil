@@ -10,22 +10,22 @@
     android:orientation="vertical"
     android:padding="5dp">
     <LinearLayout
-      android:orientation=    "horizontal"
-      android:layout_width=    "match_parent"
-      android:layout_height=    "match_parent"
-      android:layout_weight=    "1"    >
+        android:orientation=    "horizontal"
+        android:layout_width=    "match_parent"
+        android:layout_height=    "match_parent"
+        android:layout_weight=    "1">
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnProducto" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnProducto" />
         <AutoCompleteTextView
-            android:layout_width="226.5dp"
+            android:layout_width="201.0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:id="@+id/autoCompleteProducto"
             android:imeOptions="normal" />
         <Button
-            android:text="Buscar"
+            android:text="@string/btnBuscar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/btn_buscar" />

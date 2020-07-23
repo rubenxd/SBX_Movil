@@ -38,7 +38,17 @@ namespace SBX
                 string toast = adoDataBaseSBX.CreateDataBase();
                 var intent = new Intent(this, typeof(InventarioActivity));
                 StartActivity(intent);
-            };         
+            };
+
+            Button btnProveedor = FindViewById<Button>(Resource.Id.btn_proveedor);
+            btnProveedor.Click += (sender, e) =>
+            {
+                ////crear base de datos
+                AdoDataBaseSBX adoDataBaseSBX = new AdoDataBaseSBX();
+                string toast = adoDataBaseSBX.CreateDataBase();
+                var intent = new Intent(this, typeof(ProveedorActivity));
+                StartActivity(intent);
+            };
         }   
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

@@ -42,12 +42,20 @@ namespace SBX
         }
         private void ButtonClick(object sender, EventArgs e)
         {
-            AdoInventario adoInventarioID = new AdoInventario();
-            adoInventarioID.Item = "1";
-            var Productos = adoInventarioID.AdoSelectID();
             AutoCompleteTextView textView = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteProducto);
+            AdoInventario adoInventarioID = new AdoInventario();
+            string item = "";
+            if (textView.Text != "")
+            {
+                item = textView.Text.Substring(0, 1);
+            }
+           
+            adoInventarioID.Item = item;
+            var Productos = adoInventarioID.AdoSelectID();
             var adapter = new ArrayAdapter<String>(this, Resource.Layout.list_item, Productos);
             textView.Adapter = adapter;
+            ListAdapter = new ArrayAdapter<string>(this, Resource.Layout.list_item, Productos);
+            ListView.TextFilterEnabled = true;
         }
     }
 }

@@ -7,6 +7,9 @@ sbx.MainActivity;crc641b5e4fd77f0e69ca.MainActivity
 SBX.ProductoActivity, SBX;crc641b5e4fd77f0e69ca.ProductoActivity
 SBX.ProductoActivity;crc641b5e4fd77f0e69ca.ProductoActivity
 sbx.ProductoActivity;crc641b5e4fd77f0e69ca.ProductoActivity
+SBX.ProveedorActivity, SBX;crc641b5e4fd77f0e69ca.ProveedorActivity
+SBX.ProveedorActivity;crc641b5e4fd77f0e69ca.ProveedorActivity
+sbx.ProveedorActivity;crc641b5e4fd77f0e69ca.ProveedorActivity
 SBX.SplashActivity, SBX;crc641b5e4fd77f0e69ca.SplashActivity
 SBX.SplashActivity;crc641b5e4fd77f0e69ca.SplashActivity
 sbx.SplashActivity;crc641b5e4fd77f0e69ca.SplashActivity

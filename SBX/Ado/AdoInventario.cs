@@ -85,6 +85,81 @@ namespace SBX.Ado
       
             return foos;
         }
+
+        public String[] AdoSelectMaxItem()
+        {
+            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "adoDB_SBX.db3");
+            bool exists = File.Exists(dbPath);
+            String[] foos = null;
+            if (exists)
+            {
+                connection = new SqliteConnection("Data Source=" + dbPath);
+                connection.Open();
+
+                using (var contents = connection.CreateCommand())
+                {
+                    contents.CommandText = "SELECT  MAX([Item]) Item from [Producto]";
+                    var r = contents.ExecuteReader();
+                    int contador = 0;
+                    if (r.HasRows)
+                    {
+                        int filas = 1;
+                        foos = new String[filas];
+                        while (r.Read())
+                        {
+                            foos[contador] = r["Item"].ToString();
+                            contador++;
+                        }
+                    }
+                    else
+                    {
+                        foos = new String[1];
+                        foos[0] = "";
+                    }
+                }
+                connection.Close();
+            }
+
+            return foos;
+        }
+
+        public String[] AdoSelectProveedores()
+        {
+            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "adoDB_SBX.db3");
+            bool exists = File.Exists(dbPath);
+            String[] foos = null;
+            if (exists)
+            {
+                connection = new SqliteConnection("Data Source=" + dbPath);
+                connection.Open();
+
+                using (var contents = connection.CreateCommand())
+                {
+                    contents.CommandText = "SELECT [DNI],[Nombre] from [Proveedor]";
+                    var r = contents.ExecuteReader();
+                    int contador = 0;
+                    if (r.HasRows)
+                    {
+                        int filas = 1;
+                        foos = new String[filas];
+                        while (r.Read())
+                        {
+                            foos[contador] = r["DNI"].ToString() + "-" + r["Nombre"].ToString();
+                            contador++;
+                        }
+                    }
+                    else
+                    {
+                        foos = new String[1];
+                        foos[0] = "";
+                    }
+                }
+                connection.Close();
+            }
+
+            return foos;
+        }
+        
         public String[] AdoSelectID()
         {
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "adoDB_SBX.db3");
@@ -97,9 +172,18 @@ namespace SBX.Ado
 
                 using (var contents = connection.CreateCommand())
                 {
-                    contents.CommandText = "SELECT  (SELECT COUNT(*) FROM Producto WHERE [Item] = "+Item+") fila,[Item],[Nombre],[Referencia],[IVA]," +
-                        "[Proveedor],[Costo],[PrecioVenta] from [Producto]" +
-                        "WHERE [Item] = "+Item;
+                    if (Item != "")
+                    {
+                        contents.CommandText = "SELECT  (SELECT COUNT(*) FROM Producto WHERE [Item] = '" + Item + "') fila,[Item],[Nombre],[Referencia],[IVA]," +
+                       "[Proveedor],[Costo],[PrecioVenta] from [Producto]" +
+                       "WHERE [Item] = '" + Item +"'";
+                    }
+                    else
+                    {
+                        contents.CommandText = "SELECT  (SELECT COUNT(*) FROM Producto) fila,[Item],[Nombre],[Referencia],[IVA]," +
+                       "[Proveedor],[Costo],[PrecioVenta] from [Producto] ";
+                    }  
+                   
                     var r = contents.ExecuteReader();
                     int contador = 0;
                     if (r.HasRows)

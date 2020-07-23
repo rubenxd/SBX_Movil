@@ -264,7 +264,6 @@ C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\bin\Debug\com.companyname.sbx-Signe
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\build.props
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\adb.props
-C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\SBX.csprojAssemblyReference.cache
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\_VerifyXamarinAndroidSupportVersions.stamp
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res.flag
@@ -547,3 +546,7 @@ C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\android\assets\System.
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\stamp\_CopyConfigFiles.stamp
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res\layout\list_item.xml
 C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res\drawable\productos_list.xml
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res\drawable\search.png
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\res\layout\activity_proveedor.xml
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\android\src\crc641b5e4fd77f0e69ca\ProveedorActivity.java
+C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\SBX.csprojAssemblyReference.cache
