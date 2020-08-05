@@ -39,5 +39,10 @@
   <string name="textCelular">Celular *</string>
   <string name="textEmail">Email </string>
   <string name="textSitioWeb">Stio Web </string>
+  <string name="textCantidad">Cantidad *</string>
+  <string name="rbEntradas">Entrada</string>
+  <string name="rbSalidas">Salida</string>
+  <string name="btnEliminarDB">Eliminar DB</string>
+  
 
 </resources>

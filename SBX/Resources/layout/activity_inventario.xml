@@ -8,6 +8,15 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:orientation="vertical">
+    <Toolbar
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="?android:attr/colorPrimary"
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar1" 
+        android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
+        /> 
     <TextView
         android:text="@string/textItem"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -19,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="43.0dp"
         android:enabled="false"
-        android:id="@+id/editText_Item" />
+        android:id="@+id/editText_Item" />   
     <TextView
         android:text="@string/textNombre"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -87,23 +96,55 @@
         android:layout_width="match_parent"
         android:layout_height="43.0dp"
         android:id="@+id/editText_PrecioVenta" />
+    <TextView
+        android:text="@string/textCantidad"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_Cantidad" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="43.0dp"
+        android:id="@+id/editText_Cantidad" />
     <LinearLayout
         android:orientation=    "horizontal"
         android:layout_width=    "match_parent"
         android:layout_height=    "59.5dp"
         android:layout_weight=    "1">
+        <RadioButton
+            android:text="@string/rbEntradas"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/rb_entradas" />
+        <RadioButton
+            android:text="@string/rbSalidas"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/rb_Salidas" />
+    </LinearLayout>
+    <!--<LinearLayout
+        android:orientation=    "horizontal"
+        android:layout_width=    "match_parent"
+        android:layout_height=    "59.5dp"
+        android:layout_weight=    "1">
+
         <Button
             android:text="@string/btnGuardar"
             android:layout_width="185.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btn_guardar"
-            android:layout_marginRight="11.0dp" />
+            android:layout_marginRight="11.0dp" 
+            />
         <Button
             android:text="@string/btnSalir"
             android:layout_width="185.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btn_salir"
-            android:layout_marginLeft="0.0dp" />
-    </LinearLayout>
+            android:layout_marginLeft="0.0dp" 
+            />
+    </LinearLayout>-->
 
 </LinearLayout>

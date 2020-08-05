@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+
 using Mono.Data.Sqlite;
 
 namespace SBX.Ado
@@ -11,20 +12,25 @@ namespace SBX.Ado
         {
             var respuesta = "";
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "adoDB_SBX.db3");
+            
             bool exists = File.Exists(dbPath);
             if (!exists)
             {
                 Mono.Data.Sqlite.SqliteConnection.CreateFile(dbPath);
+               
                 connection = new SqliteConnection("Data Source=" + dbPath);
                 connection.Open();
 
                 var commands = new[] {
                     "CREATE TABLE [Proveedor] (DNI ntext PRIMARY KEY, Nombre ntext, Ciudad ntext, Direccion ntext, " +
                     "Telefono ntext, Celular ntext, Email ntext,SitioWeb ntext);"
-
-                    ,"CREATE TABLE [Producto] (Item ntext, Nombre ntext, Referencia ntext," +
-                    " IVA FLOAT, Proveedor ntext, Costo MONEY, PrecioVenta MONEY," +
-                    " FOREIGN KEY(Proveedor) REFERENCES Proveedor(DNI));"                                   
+                    ,
+                    "CREATE TABLE [Producto] (Item ntext, Nombre ntext, Referencia ntext," +
+                    " IVA FLOAT, Proveedor ntext,Cantidad ntext, Costo MONEY, PrecioVenta MONEY, Movimiento ntext, " +
+                    " FOREIGN KEY(Proveedor) REFERENCES Proveedor(DNI));"  
+                    ,
+                     "CREATE TABLE [Cliente] (DNI ntext PRIMARY KEY, Nombre ntext, Ciudad ntext, Direccion ntext, " +
+                    "Telefono ntext, Celular ntext, Email ntext,SitioWeb ntext);"
                 };
                 foreach (var command in commands)
                 {

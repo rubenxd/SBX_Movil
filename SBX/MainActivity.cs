@@ -8,6 +8,7 @@ using Android.Content;
 using Android.Widget;
 using System;
 using SBX.Ado;
+using System.IO;
 
 namespace SBX
 {
@@ -29,6 +30,12 @@ namespace SBX
                 var intent = new Intent(this, typeof(ProductoActivity));              
                 StartActivity(intent);
             };
+            Button btn_EliminarDB = FindViewById<Button>(Resource.Id.btn_eliminarDB);
+            btn_EliminarDB.Click += (sender, e) =>
+            {
+                string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "adoDB_SBX.db3");
+                File.Delete(dbPath);
+            };
 
             Button btnInventario = FindViewById<Button>(Resource.Id.btn_inventario);
             btnInventario.Click += (sender, e) =>
@@ -47,6 +54,16 @@ namespace SBX
                 AdoDataBaseSBX adoDataBaseSBX = new AdoDataBaseSBX();
                 string toast = adoDataBaseSBX.CreateDataBase();
                 var intent = new Intent(this, typeof(ProveedorActivity));
+                StartActivity(intent);
+            };
+
+            Button btnCliente = FindViewById<Button>(Resource.Id.btn_cliente);
+            btnCliente.Click += (sender, e) =>
+            {
+                ////crear base de datos
+                AdoDataBaseSBX adoDataBaseSBX = new AdoDataBaseSBX();
+                string toast = adoDataBaseSBX.CreateDataBase();
+                var intent = new Intent(this, typeof(ClienteActivity));
                 StartActivity(intent);
             };
         }   

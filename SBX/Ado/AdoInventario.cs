@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Android.Database.Sqlite;
 using Mono.Data.Sqlite;
 
 namespace SBX.Ado
@@ -12,13 +13,14 @@ namespace SBX.Ado
         public string Referencia { get; set; }
         public string IVA { get; set; }
         public string proveedor { get; set; }
+        public string Cantidad { get; set; }
         public string costo { get; set; }
         public string precioventa { get; set; }
-
+        public string movimiento { get; set; }
         public string output = "";
         public string AdoCreate()
         {
-            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "adoDB_SBX.db3");
+            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "adoDB_SBX.db3");            
             bool exists = File.Exists(dbPath);
 
             if (exists)
@@ -27,8 +29,8 @@ namespace SBX.Ado
                 connection.Open();
 
                 var commandsInsert = new[] {
-                    "INSERT INTO [Producto] ([Item], [Nombre],[Referencia],[IVA],[Proveedor],[Costo],[PrecioVenta]) " +
-                    "VALUES ('"+Item+"', '"+Nombre+"','"+Referencia+"','"+IVA+"','"+proveedor+"','"+costo+"','"+precioventa+"')"
+                    "INSERT INTO [Producto] ([Item], [Nombre],[Referencia],[IVA],[Proveedor],[Cantidad],[Costo],[PrecioVenta],[Movimiento]) " +
+                    "VALUES ('"+Item+"', '"+Nombre+"','"+Referencia+"','"+IVA+"','"+proveedor+"','"+Cantidad+"','"+costo+"','"+precioventa+"','"+movimiento+"')"
                 };
                 foreach (var command in commandsInsert)
                 {
@@ -61,7 +63,7 @@ namespace SBX.Ado
 
                 using (var contents = connection.CreateCommand())
                 {
-                    contents.CommandText = "SELECT  (SELECT COUNT(*) FROM Producto) fila,[Item],[Nombre],[Referencia],[IVA],[Proveedor],[Costo],[PrecioVenta] from [Producto]";
+                    contents.CommandText = "SELECT  (SELECT COUNT(*) FROM Producto) fila,[Item],[Nombre],[Referencia],[IVA],[Proveedor],[Cantidad],[Costo],[PrecioVenta] from [Producto]";
                     var r = contents.ExecuteReader();
                     int contador = 0;
                     if (r.HasRows)
@@ -135,12 +137,12 @@ namespace SBX.Ado
 
                 using (var contents = connection.CreateCommand())
                 {
-                    contents.CommandText = "SELECT [DNI],[Nombre] from [Proveedor]";
+                    contents.CommandText = "SELECT (SELECT COUNT(*) FROM Proveedor) fila,[DNI],[Nombre] from [Proveedor]";
                     var r = contents.ExecuteReader();
                     int contador = 0;
                     if (r.HasRows)
                     {
-                        int filas = 1;
+                        int filas = Convert.ToInt32(r["fila"]); ;
                         foos = new String[filas];
                         while (r.Read())
                         {
