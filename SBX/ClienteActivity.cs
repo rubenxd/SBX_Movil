@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Org.Apache.Http.Conn;
 using SBX.Ado;
 
 namespace SBX
@@ -21,6 +22,7 @@ namespace SBX
         string[] Cliente;
         AdoCliente AdoCliente = new AdoCliente();
         Boolean Guardar = true;
+        string toast = "";
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -66,12 +68,13 @@ namespace SBX
             }       
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.top_menu, menu);
+        {          
+            MenuInflater.Inflate(Resource.Menu.top_menu, menu);     
             return base.OnCreateOptionsMenu(menu);
         }
         public override bool OnOptionsItemSelected(IMenuItem item) 
         {
+          
             TextView textViewDNI = FindViewById<TextView>(Resource.Id.text_DNI);
             textViewDNI.SetTextColor(Android.Graphics.Color.ParseColor("#2C3E50"));
             TextView textViewNombre = FindViewById<TextView>(Resource.Id.text_Nombre);
@@ -155,7 +158,7 @@ namespace SBX
                         adoCliente.Celular = editText_Celular.Text;
                         adoCliente.Email = editText_Email.Text;
                         adoCliente.SitioWeb = editText_SitioWeb.Text;
-                        var toast = "";
+                       
                         if (Guardar == true)
                         {
                             toast = adoCliente.AdoCreate();
@@ -183,14 +186,52 @@ namespace SBX
                         }
                         if (toast == "Cliente Editado correctamente")
                         {
+                            this.FinishAndRemoveTask();
                             var intent2 = new Intent(this, typeof(ViewClienteActivity));
                             StartActivity(intent2);
                         }
                     }
                     break;
                 case "Consulta":
+                    this.FinishAndRemoveTask();
                     var intent = new Intent(this, typeof(ViewClienteActivity));
                     StartActivity(intent);
+                    break;
+                case "Delete":
+                    if (Guardar == false)
+                    {
+                        if (editText_DNI.Text != "")
+                        {
+                            adoCliente.DNI = editText_DNI.Text;
+                            toast = adoCliente.AdoEliminar();
+                            Toast.MakeText(this, toast, ToastLength.Long).Show();
+                            if (toast == "Cliente eliminado correctamente")
+                            {
+                                this.FinishAndRemoveTask();
+                                var intent2 = new Intent(this, typeof(ViewClienteActivity));
+                                StartActivity(intent2);
+                            }
+                        }
+                        else
+                        {
+                            Toast.MakeText(this, "Elije un Cliente", ToastLength.Long).Show();
+                        }                      
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Elije un Cliente", ToastLength.Long).Show();
+                    }
+                    break;
+                case "Clear":
+                    editText_DNI.Text = "";
+                    editText_Nombre.Text = "";
+                    editText_Ciudad.Text = "";
+                    editText_Direccion.Text = "";
+                    editText_Telefono.Text = "";
+                    editText_Celular.Text = "";
+                    editText_Email.Text = "";
+                    editText_SitioWeb.Text = "";
+                    Guardar = true;
                     break;
                 default:
                     break;

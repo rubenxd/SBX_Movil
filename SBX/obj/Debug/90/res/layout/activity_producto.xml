@@ -1,2 +1,52 @@
 
-  <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:minWidth="25px" android:minHeight="25px" android:orientation="vertical" android:padding="5dp" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"><LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/btnProducto" /><AutoCompleteTextView android:layout_width="201.0dp" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:id="@+id/autoCompleteProducto" android:imeOptions="normal" /><Button android:text="@string/btnBuscar" android:layout_width="wrap_content" android:layout_height="match_parent" android:id="@+id/btn_buscar" /></LinearLayout><LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"><ListView android:minWidth="25px" android:minHeight="25px" android:layout_width="match_parent" android:layout_height="match_parent" android:id="@android:id/list" /><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="10dp" android:textSize="16sp" android:layout_weight="1"></TextView></LinearLayout></LinearLayout>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:orientation="vertical"
+    android:padding="5dp">
+    <LinearLayout
+        android:orientation=    "horizontal"
+        android:layout_width=    "match_parent"
+        android:layout_height=    "match_parent"
+        android:layout_weight=    "1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnProducto" />
+        <AutoCompleteTextView
+            android:layout_width="201.0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/autoCompleteProducto"
+            android:imeOptions="normal" />
+        <Button
+            android:text="@string/btnBuscar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_buscar" />
+    </LinearLayout>
+    <LinearLayout
+    android:orientation=    "vertical"
+    android:layout_width=    "match_parent"
+    android:layout_height=    "match_parent"
+    android:layout_weight=    "1"    >
+        <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@android:id/list" />
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_weight=    "1">
+        </TextView>
+    </LinearLayout>
+</LinearLayout>

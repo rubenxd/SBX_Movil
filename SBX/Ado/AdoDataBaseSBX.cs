@@ -25,12 +25,18 @@ namespace SBX.Ado
                     "CREATE TABLE [Proveedor] (DNI ntext PRIMARY KEY, Nombre ntext, Ciudad ntext, Direccion ntext, " +
                     "Telefono ntext, Celular ntext, Email ntext,SitioWeb ntext);"
                     ,
+                     "INSERT INTO [Proveedor] ([DNI], [Nombre],[Ciudad],[Direccion],[Telefono],[Celular],[Email],[SitioWeb]) " +
+                    "VALUES ('0', 'N/A','','','0','0','0','0')"
+                    ,
                     "CREATE TABLE [Producto] (Item ntext, Nombre ntext, Referencia ntext," +
                     " IVA FLOAT, Proveedor ntext,Cantidad ntext, Costo MONEY, PrecioVenta MONEY, Movimiento ntext, " +
                     " FOREIGN KEY(Proveedor) REFERENCES Proveedor(DNI));"  
                     ,
                      "CREATE TABLE [Cliente] (DNI ntext PRIMARY KEY, Nombre ntext, Ciudad ntext, Direccion ntext, " +
                     "Telefono ntext, Celular ntext, Email ntext,SitioWeb ntext);"
+                    ,
+                    "INSERT INTO [Cliente] ([DNI], [Nombre],[Ciudad],[Direccion],[Telefono],[Celular],[Email],[SitioWeb]) " +
+                    "VALUES ('0', 'N/A','','','0','0','0','0')"
                 };
                 foreach (var command in commands)
                 {

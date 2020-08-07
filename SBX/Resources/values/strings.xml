@@ -43,6 +43,7 @@
   <string name="rbEntradas">Entrada</string>
   <string name="rbSalidas">Salida</string>
   <string name="btnEliminarDB">Eliminar DB</string>
+  <string name="buscaProveedor">Proveedor</string>
   
 
 </resources>

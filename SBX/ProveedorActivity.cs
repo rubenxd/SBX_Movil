@@ -17,6 +17,11 @@ namespace SBX
     public class ProveedorActivity : Activity
     {
         int Validado = 0;
+        string ProveedorModificar = "";
+        string[] Proveedor;
+        AdoProveedor adoProveedor = new AdoProveedor();
+        Boolean Guardar = true;
+        string toast = "";
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,7 +36,35 @@ namespace SBX
             //{
             //    var intent = new Intent(this, typeof(MainActivity));
             //    StartActivity(intent);
-            //};        
+            //};    
+            var recibir = Intent;
+            ProveedorModificar = recibir.GetStringExtra("Proveedor");
+            if (ProveedorModificar != null)
+            {
+                Guardar = false;
+                Proveedor = ProveedorModificar.Split("-");
+                EditText editText_DNI = FindViewById<EditText>(Resource.Id.editText_DNI);
+                editText_DNI.Text = Proveedor[0];
+                editText_DNI.Enabled = false;
+                EditText editText_Nombre = FindViewById<EditText>(Resource.Id.editText_Nombre);
+                editText_Nombre.Text = Proveedor[1];
+                adoProveedor.Proveedor = Proveedor[0].Trim();
+                var Proveedores = adoProveedor.AdoSelectIDTodos();
+                string Cli = Proveedores[0];
+                string[] Cli2 = Cli.Split("-");
+                EditText editText_Ciudad = FindViewById<EditText>(Resource.Id.editText_Ciudad);
+                editText_Ciudad.Text = Cli2[2];
+                EditText editText_Direccion = FindViewById<EditText>(Resource.Id.editText_Direccion);
+                editText_Direccion.Text = Cli2[3];
+                EditText editText_Telefono = FindViewById<EditText>(Resource.Id.editText_telefono);
+                editText_Telefono.Text = Cli2[4];
+                EditText editText_Celular = FindViewById<EditText>(Resource.Id.editText_Celular);
+                editText_Celular.Text = Cli2[5];
+                EditText editText_Email = FindViewById<EditText>(Resource.Id.editText_Email);
+                editText_Email.Text = Cli2[6];
+                EditText editText_SitioWeb = FindViewById<EditText>(Resource.Id.editText_StiioWeb);
+                editText_SitioWeb.Text = Cli2[7];
+            }
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -78,7 +111,19 @@ namespace SBX
                     }
                     else
                     {
-                        textViewDNI.SetTextColor(Android.Graphics.Color.ParseColor("#2C3E50"));
+                        //valida existencia de DNI
+                        adoProveedor.Proveedor = editText_DNI.Text;
+                        var resp = adoProveedor.AdoSelectID();
+                        if (resp[0] != "")
+                        {
+                            Toast.MakeText(this, "DNI ya existe", ToastLength.Long).Show();
+                            textViewDNI.SetTextColor(Android.Graphics.Color.ParseColor("#E85434"));
+                            Validado++;
+                        }
+                        else
+                        {
+                            textViewDNI.SetTextColor(Android.Graphics.Color.ParseColor("#2C3E50"));
+                        }
                     }
                     //TextView textViewNombre = FindViewById<TextView>(Resource.Id.text_Nombre);
                     if (editText_Nombre.Text == "")
@@ -111,8 +156,16 @@ namespace SBX
                         adoProveedor.Celular = editText_Celular.Text;
                         adoProveedor.Email = editText_Email.Text;
                         adoProveedor.SitioWeb = editText_SitioWeb.Text;
-                        var toast = adoProveedor.AdoCreate();
-                        if (toast == "Proveedor creado correctamente")
+                        if (Guardar == true)
+                        {
+                            toast = adoProveedor.AdoCreate();
+                        }
+                        else
+                        {
+                            toast = adoProveedor.AdoEditar();
+                        }
+
+                        if (toast == "Proveedor creado correctamente" || toast == "Proveedor Editado correctamente")
                         {
                             editText_DNI.Text = "";
                             editText_Nombre.Text = "";
@@ -126,12 +179,56 @@ namespace SBX
                         }
                         else
                         {
-                            Toast.MakeText(this, "Ingrese informacion requerida", ToastLength.Long).Show();
+                            Toast.MakeText(this, toast, ToastLength.Long).Show();
+                        }
+                        if (toast == "Cliente Editado correctamente")
+                        {
+                            this.FinishAndRemoveTask();
+                            var intent2 = new Intent(this, typeof(ViewProveedorActivity));
+                            StartActivity(intent2);
                         }
                     }
                     break;
-                case "Edit":
-                    Toast.MakeText(this, "edit", ToastLength.Long).Show();
+                case "Consulta":
+                    this.FinishAndRemoveTask();
+                    var intent = new Intent(this, typeof(ViewProveedorActivity));
+                    StartActivity(intent);
+                    break;
+                case "Delete":
+                    if (Guardar == false)
+                    {
+                        if (editText_DNI.Text != "")
+                        {
+                            adoProveedor.DNI = editText_DNI.Text;
+                            toast = adoProveedor.AdoEliminar();
+                            Toast.MakeText(this, toast, ToastLength.Long).Show();
+                            if (toast == "Proveedor eliminado correctamente")
+                            {
+                                this.FinishAndRemoveTask();
+                                var intent2 = new Intent(this, typeof(ViewProveedorActivity));
+                                StartActivity(intent2);
+                            }
+                        }
+                        else
+                        {
+                            Toast.MakeText(this, "Elije un Proveedor", ToastLength.Long).Show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Elije un Proveedor", ToastLength.Long).Show();
+                    }
+                    break;
+                case "Clear":
+                    editText_DNI.Text = "";
+                    editText_Nombre.Text = "";
+                    editText_Ciudad.Text = "";
+                    editText_Direccion.Text = "";
+                    editText_Telefono.Text = "";
+                    editText_Celular.Text = "";
+                    editText_Email.Text = "";
+                    editText_SitioWeb.Text = "";
+                    Guardar = true;
                     break;
                 default:
                     break;

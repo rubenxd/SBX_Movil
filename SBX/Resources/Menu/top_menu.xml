@@ -2,14 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   <item
        android:id="@+id/menu_Consulta"
-       android:icon="@mipmap/ic_action_content_create"
+       android:icon="@mipmap/baseline_search_white_48"
        android:showAsAction="ifRoom"
        android:title="Consulta" /> 
   <item
        android:id="@+id/menu_save"
-       android:icon="@mipmap/ic_action_content_save"
+       android:icon="@mipmap/baseline_save_white_48"
        android:showAsAction="ifRoom"
        android:title="Save" />
+  <item
+       android:id="@+id/menu_Eliminar"
+       android:icon="@mipmap/baseline_delete_white_48"
+       android:showAsAction="ifRoom"
+       android:title="Delete" 
+       />
+  <item
+       android:id="@+id/menu_Limpiar"
+       android:icon="@mipmap/baseline_clear_white_48"
+       android:showAsAction="ifRoom"
+       android:title="Clear"
+       />
  <!-- <item
        android:id="@+id/menu_preferences"
        android:showAsAction="never"

@@ -212,9 +212,9 @@ namespace SBX.Ado
                         foos = new String[filas];
                         while (r.Read())
                         {
-                            foos[contador] = r["DNI"].ToString() + " - " + r["Nombre"].ToString() + " - " + r["Ciudad"].ToString() 
-                            + " - " + r["Direccion"].ToString() + " - " + r["Telefono"].ToString() + " - " + r["Celular"].ToString() 
-                            + " - " + r["Email"].ToString() + " - " + r["SitioWeb"].ToString();
+                            foos[contador] = r["DNI"].ToString() + " -- " + r["Nombre"].ToString() + " -- " + r["Ciudad"].ToString() 
+                            + " -- " + r["Direccion"].ToString() + " -- " + r["Telefono"].ToString() + " -- " + r["Celular"].ToString() 
+                            + " -- " + r["Email"].ToString() + " -- " + r["SitioWeb"].ToString();
                             contador++;
                         }
                     }
@@ -228,6 +228,46 @@ namespace SBX.Ado
             }
 
             return foos;
+        }
+        public string AdoEliminar()
+        {
+            try
+            {
+                string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "adoDB_SBX.db3");
+                bool exists = File.Exists(dbPath);
+
+                if (exists)
+                {
+                    connection = new SqliteConnection("Data Source=" + dbPath);
+                    connection.Open();
+
+                    var commandsInsert = new[] {
+                    " DELETE FROM  [Cliente] "+
+                    " WHERE  [DNI] = '"+DNI.Trim()+"'"
+                };
+                    foreach (var command in commandsInsert)
+                    {
+                        using (var c = connection.CreateCommand())
+                        {
+                            c.CommandText = command;
+                            var i = c.ExecuteNonQuery();
+                        }
+                    }
+
+                    output = "Cliente eliminado correctamente";
+                    connection.Close();
+                }
+                else
+                {
+                    output += "No existe base de datos";
+                }
+            }
+            catch (Exception ex)
+            {
+                output = "Error: " + ex.Message;
+            }
+
+            return output;
         }
     }
 }

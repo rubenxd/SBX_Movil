@@ -2,12 +2,14 @@ adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 AutoCompleteTextView;obj\Debug\90\res\layout\activity_producto.xml
 AutoCompleteTextView;obj\Debug\90\res\layout\activity_viewcliente.xml
+AutoCompleteTextView;obj\Debug\90\res\layout\activity_viewproveedor.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 bitmap;obj\Debug\90\res\drawable\splash_screen.xml
 Button;obj\Debug\90\res\layout\activity_main.xml
 Button;obj\Debug\90\res\layout\activity_producto.xml
 Button;obj\Debug\90\res\layout\activity_viewcliente.xml
+Button;obj\Debug\90\res\layout\activity_viewproveedor.xml
 cache-path;C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\lp\37\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\90\res\drawable\splash_screen.xml
 color;obj\Debug\90\res\values\colors.xml
@@ -33,8 +35,10 @@ LinearLayout;obj\Debug\90\res\layout\activity_main.xml
 LinearLayout;obj\Debug\90\res\layout\activity_producto.xml
 LinearLayout;obj\Debug\90\res\layout\activity_proveedor.xml
 LinearLayout;obj\Debug\90\res\layout\activity_viewcliente.xml
+LinearLayout;obj\Debug\90\res\layout\activity_viewproveedor.xml
 ListView;obj\Debug\90\res\layout\activity_producto.xml
 ListView;obj\Debug\90\res\layout\activity_viewcliente.xml
+ListView;obj\Debug\90\res\layout\activity_viewproveedor.xml
 menu;obj\Debug\90\res\menu\popup_menu.xml
 menu;obj\Debug\90\res\menu\top_menu.xml
 paths;C:\Users\RUBEN\Documents\Ruben\SBX_Movil\SBX\obj\Debug\90\lp\37\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -55,6 +59,7 @@ TextView;obj\Debug\90\res\layout\activity_inventario.xml
 TextView;obj\Debug\90\res\layout\activity_producto.xml
 TextView;obj\Debug\90\res\layout\activity_proveedor.xml
 TextView;obj\Debug\90\res\layout\activity_viewcliente.xml
+TextView;obj\Debug\90\res\layout\activity_viewproveedor.xml
 TextView;obj\Debug\90\res\layout\list_item.xml
 Toolbar;obj\Debug\90\res\layout\activity_cliente.xml
 Toolbar;obj\Debug\90\res\layout\activity_inventario.xml

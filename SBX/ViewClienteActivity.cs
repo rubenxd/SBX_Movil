@@ -16,7 +16,7 @@ namespace SBX
             base.OnCreate(savedInstanceState);
             // Create your application here
             SetContentView(Resource.Layout.activity_viewCliente);
-            Button button = FindViewById<Button>(Resource.Id.btn_buscar_cliente);         
+            //Button button = FindViewById<Button>(Resource.Id.btn_buscar_cliente);         
             Button btnBuscar = FindViewById<Button>(Resource.Id.btn_buscar_cliente);
             btnBuscar.Click += ButtonClick;          
         }
@@ -38,6 +38,7 @@ namespace SBX
             ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
             {
                 Toast.MakeText(Application, ((TextView)args.View).Text, ToastLength.Short).Show();
+                this.FinishAndRemoveTask();
                 var intent = new Intent(this, typeof(ClienteActivity));
                 intent.PutExtra("Cliente", ((TextView)args.View).Text);
                 StartActivity(intent);
